@@ -10,7 +10,6 @@ public class Welcome extends  JFrame {
     private JButton signInAsAButton;
     private JButton btnUser;
     private JButton signInAsUserButton;
-
     public Welcome(){
         setTitle("Welcome");
         setContentPane(welcomePanel);
