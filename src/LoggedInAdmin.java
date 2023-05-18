@@ -66,6 +66,12 @@ public class LoggedInAdmin extends JFrame {
                 DeleteTrain deleteTrain= new DeleteTrain();
             }
         });
+        deleteTripButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeleteTrip deleteTrip = new DeleteTrip();
+            }
+        });
     }
 
     private void showTrains() {
