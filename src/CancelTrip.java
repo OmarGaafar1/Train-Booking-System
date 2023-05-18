@@ -114,7 +114,7 @@ public class CancelTrip extends JFrame {
     private  List<String> sqlGetServerNameDatabaseName()
     {
         List<String> s = new ArrayList<>();
-        String filename = "Database";
+        String filename = "Database.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();

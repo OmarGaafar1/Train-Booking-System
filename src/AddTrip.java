@@ -152,7 +152,7 @@ public class AddTrip extends JFrame {
     private static List<String> sqlGetServerNameDatabaseName()
     {
         List<String> s = new ArrayList<>();
-        String filename = "Database";
+        String filename = "Database.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();
@@ -171,7 +171,7 @@ public class AddTrip extends JFrame {
     }
 
     private int getNextTripID() {
-        String filename = "TripID";
+        String filename = "src/Generators/TripID";
         int nextTripID = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {

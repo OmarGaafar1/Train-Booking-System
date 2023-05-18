@@ -144,7 +144,7 @@ public class RegistrationForm extends JDialog{
 
     }
     private int getNextUserID() {
-        String filename = "userID";
+        String filename = "src/Generators/userID";
         int nextUserID = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -170,7 +170,7 @@ public class RegistrationForm extends JDialog{
     }
     private int getNextAdminID()
     {
-        String filename = "adminID";
+        String filename = "src/Generators/adminID";
         int nextUserID = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -201,7 +201,7 @@ public class RegistrationForm extends JDialog{
     private static List<String> sqlGetServerNameDatabaseName()
     {
         List<String> s = new ArrayList<>();
-        String filename = "Database";
+        String filename = "Database.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();

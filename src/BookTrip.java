@@ -123,7 +123,7 @@ public class BookTrip extends JFrame {
     }
     private int getNextBookingID()
     {
-        String filename = "BookingsID";
+        String filename = "src/Generators/BookingsID";
         int nextBookingID = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -151,7 +151,7 @@ public class BookTrip extends JFrame {
     private static List<String> sqlGetServerNameDatabaseName()
     {
         List<String> s = new ArrayList<>();
-        String filename = "Database";
+        String filename = "Database.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line = br.readLine();
