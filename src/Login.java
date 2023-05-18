@@ -85,19 +85,24 @@ public class Login extends JDialog{
             ResultSet resultSet = statment.executeQuery();
             if(resultSet.next()) {
             user = new Person();
-                user.ID = resultSet.getInt("UserID");
+                if(personType.equals("USER"))
+                    user.ID = resultSet.getInt("UserID");
+                else
+                    user.ID = resultSet.getInt("AdminID");
                 user.Name = resultSet.getString("Name");
                 user.Password = resultSet.getString("Password");
                 user.Email = resultSet.getString("Email");
             }
-            LoggedInUser l ;
+            LoggedInUser loggedInUser ;
+            LoggedInAdmin loggedInAdmin;
             if(user!= null)
             {
                 this.dispose();
                 if(personType.equals("USER"))
-                    l = new LoggedInUser(user);
+                    loggedInUser = new LoggedInUser(user);
                 else
-                    sql = "Select * from [Admin] where Name= ? AND password = ?";
+                     loggedInAdmin = new LoggedInAdmin(user);
+
 
 
 
