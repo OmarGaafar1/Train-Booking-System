@@ -21,6 +21,7 @@ public class LoggedInAdmin extends JFrame {
     private JLabel tfEmail;
     private JButton showTripsButton;
     private JButton showTrainsButton;
+    private JButton signOutButton;
     private Person admin;
     public LoggedInAdmin(Person Admin)
     {
@@ -70,6 +71,13 @@ public class LoggedInAdmin extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DeleteTrip deleteTrip = new DeleteTrip();
+            }
+        });
+        signOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LoggedInAdmin.this.dispose();
+                Welcome l = new Welcome();
             }
         });
     }

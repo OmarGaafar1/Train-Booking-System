@@ -30,6 +30,7 @@ public class LoggedInUser extends JFrame {
     private JButton showMyBooksButton;
     private JButton btnHide;
     private JButton cancelTripsButton;
+    private JButton signOutButton;
 
     public LoggedInUser(Person U)
     {
@@ -104,6 +105,13 @@ public class LoggedInUser extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CancelTrip cancelTrip = new CancelTrip(user.ID);
+            }
+        });
+        signOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LoggedInUser.this.dispose();
+                Welcome w = new Welcome();
             }
         });
     }
