@@ -62,7 +62,7 @@ Train System is a Java-based application that allows users to book train trips, 
 
 ## Configuration
 
-- **To configure the Train System application, please follow these steps:
+- To configure the Train System application, please follow these steps:
 
 1. Locate the database.txt file in the project directory.
 
