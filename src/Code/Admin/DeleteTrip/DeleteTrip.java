@@ -1,48 +1,57 @@
+package Code.Admin.DeleteTrip;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeleteTrain extends JFrame {
-    private JButton deleteTrainButton;
-    private JTextField tfTrainId;
+public class DeleteTrip extends JFrame{
+    private JTextField tfTripID;
     private JButton cancelButton;
-    private JPanel deleteTrainPanel;
+    private JButton deleteTripButton;
+    private JPanel DeleteTripPanel;
 
-    public DeleteTrain() {
-        setTitle("Deleting Train");
-        setContentPane(deleteTrainPanel);
-        setMinimumSize(new Dimension(370,274));
+    public DeleteTrip ()
+    {
+        setTitle("Deleting Trip");
+        setContentPane(DeleteTripPanel);
+        setMinimumSize(new Dimension(350,274));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        cancelButton.addActionListener(new ActionListener() {
+        ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DeleteTrain.this.dispose();
+                DeleteTrip.this.dispose();
             }
-        });
-        deleteTrainButton.addActionListener(new ActionListener() {
+        };
+        cancelButton.addActionListener(listener);
+        deleteTripButton.addActionListener(listener);
+        deleteTripButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String TrainID = tfTrainId.getText();
-                if(TrainID.matches("\\d+"))
+                String tripID = tfTripID.getText();
+                if(tripID.matches("\\d+"))
                 {
-                    deleteTrain(Integer.parseInt(TrainID));
+                    deleteTrain(Integer.parseInt(tripID));
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(DeleteTrain.this,"TrainID must be a number");
+                    JOptionPane.showMessageDialog(DeleteTrip.this,"TripID must be a number");
                 }
             }
 
 
         });
     }
-    private void deleteTrain(int trainID) {
+
+    private void deleteTrain(int tripID) {
         List<String> names = new ArrayList<>();
         names = sqlGetServerNameDatabaseName();
 
@@ -51,11 +60,11 @@ public class DeleteTrain extends JFrame {
         String url = "jdbc:sqlserver://" +serverName + ":1433;DatabaseName=" + dbName + ";encrypt=true;trustServerCertificate=true;integratedSecurity=true";
         try {
             Connection connection = DriverManager.getConnection(url);
-            String sql = "Delete from Train where TrainID = ? ";
+            String sql = "Delete from Trip where TripID = ? ";
             PreparedStatement statment = connection.prepareStatement(sql);
-            statment.setInt(1,trainID);
+            statment.setInt(1,tripID);
             statment.executeUpdate();
-            JOptionPane.showMessageDialog(this,"Train was successfully Deleted");
+            JOptionPane.showMessageDialog(this,"Trip was successfully Deleted");
             this.dispose();
             connection.close();
         } catch (SQLException e) {
@@ -64,8 +73,13 @@ public class DeleteTrain extends JFrame {
         }
     }
     public static void main(String[] args) {
-        DeleteTrain a = new DeleteTrain();
+        DeleteTrip deleteTrip = new DeleteTrip();
     }
+
+
+
+
+
 
     private static List<String> sqlGetServerNameDatabaseName()
     {

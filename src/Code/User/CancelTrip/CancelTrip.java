@@ -1,14 +1,16 @@
+package Code.User.CancelTrip;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class CancelTrip extends JFrame {
 
@@ -57,6 +59,7 @@ public class CancelTrip extends JFrame {
     private boolean checkBooking(int bookingID) {
         int rowCount=0;
         List<String> names = new ArrayList<>();
+
         names = sqlGetServerNameDatabaseName();
 
         String serverName = names.get(0);
@@ -110,8 +113,7 @@ public class CancelTrip extends JFrame {
             e.printStackTrace();
         }
     }
-
-    private  List<String> sqlGetServerNameDatabaseName()
+    public List<String> sqlGetServerNameDatabaseName()
     {
         List<String> s = new ArrayList<>();
         String filename = "Database.txt";
@@ -131,6 +133,7 @@ public class CancelTrip extends JFrame {
 
         return s;
     }
+
     public static void main(String[] args) {
         CancelTrip c = new CancelTrip(1);
     }

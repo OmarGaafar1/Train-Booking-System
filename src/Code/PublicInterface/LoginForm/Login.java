@@ -1,3 +1,8 @@
+package Code.PublicInterface.LoginForm;
+import Code.Admin.LoggedAdmin.LoggedInAdmin;
+import Code.PublicInterface.Person;
+import Code.User.LoggedUser.LoggedInUser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

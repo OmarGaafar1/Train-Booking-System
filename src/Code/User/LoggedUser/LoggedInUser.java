@@ -1,3 +1,11 @@
+package Code.User.LoggedUser;
+
+import Code.PublicInterface.LoginForm.Login;
+import Code.PublicInterface.Person;
+import Code.PublicInterface.WelcomScreen.Welcome;
+import Code.User.BookTrip.BookTrip;
+import Code.User.CancelTrip.CancelTrip;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

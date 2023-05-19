@@ -1,3 +1,12 @@
+package Code.Admin.LoggedAdmin;
+
+import Code.Admin.AddTrain.AddTrain;
+import Code.Admin.AddTrip.AddTrip;
+import Code.Admin.DeleteTrain.DeleteTrain;
+import Code.Admin.DeleteTrip.DeleteTrip;
+import Code.PublicInterface.Person;
+import Code.PublicInterface.WelcomScreen.Welcome;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -1,3 +1,8 @@
+package Code.PublicInterface.WelcomScreen;
+
+import Code.PublicInterface.LoginForm.Login;
+import Code.PublicInterface.RegistrationForm.RegistrationForm;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +13,6 @@ public class Welcome extends  JFrame {
     private JButton registerButton;
     private JButton signInAsAnButton;
     private JButton signInAsAButton;
-    private JButton btnUser;
     private JButton signInAsUserButton;
     public Welcome(){
         setTitle("Welcome");
