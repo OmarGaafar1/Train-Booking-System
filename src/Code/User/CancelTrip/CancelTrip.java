@@ -1,16 +1,16 @@
 package Code.User.CancelTrip;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CancelTrip extends JFrame {
 
@@ -25,7 +25,7 @@ public class CancelTrip extends JFrame {
         userID= UserID;
         setTitle("Cancel A Trip");
         setContentPane(cancelPanel);
-        setMinimumSize(new Dimension(350,254));
+        setMinimumSize(new Dimension(450,254));
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
