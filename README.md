@@ -42,6 +42,11 @@ Train System is a Java-based application that allows users to book train trips, 
 
 ## ScreenShoots
 
+## SQLJDBC configuration
+
+- Add the jar file in setup folder attached above as an dependency for java projcet
+
+- Open your environment variables and locate your user path and add the .dll file attached in setup folder
 
 ## Database Setup
 
@@ -49,7 +54,7 @@ Train System is a Java-based application that allows users to book train trips, 
 
 - Import the database schema and initial data by following these steps:
 
-1. Locate the TrainSystem.sql file in the project directory.
+1. Locate the TrainSystem.sql file in the setup folder.
 2. Open SQL Server Management Studio or any other suitable SQL client.
 3. Connect to your SQL Server instance and select the newly created Train System database.
 4. Open the TrainSystem.sql file and execute its contents to create the necessary tables, views, and initial data.
