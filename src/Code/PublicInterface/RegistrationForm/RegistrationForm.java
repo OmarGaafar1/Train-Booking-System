@@ -142,6 +142,7 @@ public class RegistrationForm extends JDialog{
                 connection.close();
                 JOptionPane.showMessageDialog(this, "Successfully Registered");
                 this.dispose();
+                Welcome w = new Welcome();
 
 
             } catch (SQLException e) {
