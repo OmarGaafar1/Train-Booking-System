@@ -30,9 +30,53 @@ Train System is a Java-based application that allows users to book train trips, 
 
 ## Installation and Usage
 
-1. Clone the repository:
+1. Set up the SQL Server database and ensure it is running.
 
-   ```bash
-   git clone https://github.com/your-username/train-system.git
+2. Update the database connection settings in the configuration file (config.properties) to match your SQL Server configuration.
 
-Provide your contact information or a way for users to reach out to you with questions, feedback, or inquiries.
+3. Build the project using your preferred build tool (e.g., Maven, Gradle) or compile the Java source files manually.
+
+4. Run the application.
+
+5. Follow the on-screen instructions to use the Train System application. Sign in as a user or admin to access the respective   functionalities.
+
+##ScreenShoots
+
+
+## Database Setup
+
+--**Create a new SQL Server database for the Train System project.
+
+-- **Import the database schema and initial data by following these steps:
+
+1. Locate the TrainSystem.sql file in the project directory.
+2. Open SQL Server Management Studio or any other suitable SQL client.
+3. Connect to your SQL Server instance and select the newly created Train System database.
+4. Open the TrainSystem.sql file and execute its contents to create the necessary tables, views, and initial data.
+5. Update the database connection settings in the configuration file (config.properties) to match your SQL Server configuration (host, port, database name, username, password).
+
+--**Make sure the SQL Server instance is running before launching the Train System application.
+
+--**By following these steps, you will have the necessary database structure and initial data set up for the Train System project. Users can then interact with the application and perform various operations related to train booking, trip management, and user administration.
+
+
+## Configuration
+
+-**To configure the Train System application, please follow these steps:
+
+1. Locate the database.txt file in the project directory.
+
+2. Open the file using a text editor.
+
+3. Update the first line of the file with the server name of your SQL Server instance. Replace it with the appropriate server name.
+
+4. Update the second line of the file with the database name for the Train System project. Replace it with the actual database name.
+
+Example database.txt file:
+  ```bash
+localhost
+TrainSystemDB
+```
+5 Save the file after making the necessary updates.
+
+-**By following these steps, you will ensure that the Train System application can read the correct server name and database name from the database.txt file when establishing a connection to the SQL Server.
