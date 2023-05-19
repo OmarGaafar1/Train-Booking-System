@@ -22,6 +22,18 @@ Train System is a Java-based application that allows users to book train trips, 
 - **Java Swing:** GUI library used for building the graphical user interface.
 - **JDBC:** Java Database Connectivity API for connecting and interacting with the SQL Server database.
 
+## ScreenShoots
+![1](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/43abe8d8-8109-458c-92fd-344b0d6809ac)
+![2](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/f9f5ec0a-9f98-4d2f-b8c8-fa95a60f7424)\
+![3](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/ce2d53c7-4c9e-4ae3-8eb2-565e02e8bf58)
+![6](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/a64491d6-f873-4df1-8b04-c2b491e99708)
+![5](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/847cfc01-d982-4029-a29c-2805360937fb)
+![7](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/d7db59eb-c494-473f-a15e-390b10c71fd6)
+
+
+
+
+
 ## Prerequisites
 
 - Java Development Kit (JDK) version XYZ or higher.
@@ -40,7 +52,7 @@ Train System is a Java-based application that allows users to book train trips, 
 
 5. Follow the on-screen instructions to use the Train System application. Sign in as a user or admin to access the respective   functionalities.
 
-## ScreenShoots
+
 
 ## SQLJDBC configuration
 
