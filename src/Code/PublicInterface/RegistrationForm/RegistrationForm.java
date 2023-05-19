@@ -1,11 +1,16 @@
 package Code.PublicInterface.RegistrationForm;
 
+import Code.PublicInterface.WelcomScreen.Welcome;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
 import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +42,8 @@ public class RegistrationForm extends JDialog{
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                RegistrationForm.this.dispose();
+                Welcome w = new Welcome();
             }
         });
 
@@ -86,6 +92,7 @@ public class RegistrationForm extends JDialog{
                 connection.close();
                 JOptionPane.showMessageDialog(this, "Successfully Registered");
                 this.dispose();
+                Welcome w = new Welcome();
 
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, "This information is already registered");
@@ -135,6 +142,7 @@ public class RegistrationForm extends JDialog{
                 connection.close();
                 JOptionPane.showMessageDialog(this, "Successfully Registered");
                 this.dispose();
+
 
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, "This information is already registered");

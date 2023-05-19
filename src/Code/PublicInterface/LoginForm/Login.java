@@ -1,6 +1,7 @@
 package Code.PublicInterface.LoginForm;
 import Code.Admin.LoggedAdmin.LoggedInAdmin;
 import Code.PublicInterface.Person;
+import Code.PublicInterface.WelcomScreen.Welcome;
 import Code.User.LoggedUser.LoggedInUser;
 
 import javax.swing.*;
@@ -43,16 +44,13 @@ public class Login extends JDialog{
                     return;
                 }
                 user = getAuthentication(Name, Password , personType);
-                if(user!= null)
-                {
-                    System.out.println("Successfully Logged In");
-                }
-                else
+                if(user== null)
                 {
                     JOptionPane.showMessageDialog(Login.this, "Name or Password Invalid" ,
                             "Try again",
                             JOptionPane.ERROR_MESSAGE);
                 }
+
 
             }
         });
@@ -61,6 +59,8 @@ public class Login extends JDialog{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Login.this.dispose();
+                Welcome w = new Welcome();
+
             }
         });
         setVisible(true);
