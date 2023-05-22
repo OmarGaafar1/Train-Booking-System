@@ -31,6 +31,7 @@ public class LoggedInAdmin extends JFrame {
     private JButton showTripsButton;
     private JButton showTrainsButton;
     private JButton signOutButton;
+    private JButton showReportButton;
     private Person admin;
     public LoggedInAdmin(Person Admin)
     {
@@ -89,8 +90,107 @@ public class LoggedInAdmin extends JFrame {
                 Welcome l = new Welcome();
             }
         });
-    }
+        showReportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                generateReport();
+            }
 
+
+        });
+    }
+    private void generateReport() {
+        List<String> names = new ArrayList<>();
+        names = sqlGetServerNameDatabaseName();
+
+        String serverName = names.get(0);
+        String dbName = names.get(1);
+        String url = "jdbc:sqlserver://" +serverName + ":1433;DatabaseName=" + dbName + ";encrypt=true;trustServerCertificate=true;integratedSecurity=true";
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            StringBuilder Report = new StringBuilder();
+            Report.append("\t----Generating Reports about users----\nWe have found the following Statistics\n");
+            String sql = "SELECT\n" +
+                    "  (SELECT COUNT(*) FROM [USER]) AS UserCount,\n" +
+                    "  (SELECT COUNT(*) FROM BOOKING) AS BookedTripsCount,\n" +
+                    "  (SELECT COUNT(*) FROM TRAIN) AS TrainCount,\n" +
+                    "  (SELECT COUNT(*) FROM SEATs) AS SeatCount,\n" +
+                    "  (select count(*) from Trip) as TripsCount";
+            Report.append("UserCount").append("\t")
+                    .append("BookedTripsCount").append("\t")
+                    .append("TripsCount").append('\t')
+                    .append("TrainCount").append("\t")
+                    .append("SeatCount").append("\t").append("\n");
+            PreparedStatement statment = connection.prepareStatement(sql);
+            ResultSet resultSet = statment.executeQuery();
+
+            while(resultSet.next())
+            {
+                String UserCount = resultSet.getString("UserCount");
+                String BookedTripsCount = resultSet.getString("BookedTripsCount");
+                String TrainCount = resultSet.getString("TrainCount");
+                String SeatCount = resultSet.getString("SeatCount");
+                String TripsCount = resultSet.getString("TripsCount");
+                Report.append(UserCount).append("\t")
+                        .append(BookedTripsCount).append("\t\t   ")
+                        .append(TripsCount).append('\t')
+                        .append(TrainCount).append("\t")
+                        .append(SeatCount).append("\t").append("\n");
+            }
+
+
+
+
+            Report.append("UserID").append("\t")
+                    .append("Name").append("\t")
+                    .append("Seats").append('\t')
+                    .append("BookingID").append("\t")
+                    .append("TripIDs").append("\t").append('\n');
+
+
+            sql = "SELECT\n" +
+                    "  U.UserID,\n" +
+                    "  U.NAME,\n" +
+                    "  COUNT(B.BookingID) AS Seats,\n" +
+                    "  CASE\n" +
+                    "    WHEN COUNT(B.BookingID) > 0 THEN STRING_AGG(CAST(B.BookingID AS VARCHAR), ', ')\n" +
+                    "    ELSE 'null'\n" +
+                    "  END AS BookingID,\n" +
+                    "  CASE\n" +
+                    "    WHEN B.BookingID > 0 THEN STRING_AGG(CAST(B.TripID AS VARCHAR), ', ')\n" +
+                    "    ELSE 'null'\n" +
+                    "  END AS TripID\n" +
+                    "FROM\n" +
+                    "  [USER] U\n" +
+                    "  LEFT JOIN BOOKING B ON U.UserID = B.UserID\n" +
+                    "GROUP BY\n" +
+                    "  U.UserID, U.NAME, B.BookingID\n" +
+                    "ORDER BY\n" +
+                    "  U.UserID;\n";
+            statment = connection.prepareStatement(sql);
+            resultSet = statment.executeQuery();
+            while(resultSet.next())
+            {
+                String UserID = resultSet.getString("UserID");
+                String Name = resultSet.getString("Name");
+                String Seats = resultSet.getString("Seats");
+                String BookingID = resultSet.getString("BookingID");
+                String TripID = resultSet.getString("TripID");
+                Report.append(UserID).append("\t")
+                        .append(Name).append("\t")
+                        .append(Seats).append('\t')
+                        .append(BookingID).append("\t")
+                        .append(TripID).append("\t").append("\n");
+            }
+            connection.close();
+            taDisplayer.setText(Report.toString());
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "This information is already registered");
+            // Handle any errors that occurred during the connection
+
+            e.printStackTrace();
+        }
+    }
     private void showTrains() {
         List<String> names = new ArrayList<>();
         names = sqlGetServerNameDatabaseName();
