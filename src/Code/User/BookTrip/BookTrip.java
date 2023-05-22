@@ -1,4 +1,6 @@
 package Code.User.BookTrip;
+import Code.User.Seats.Seats;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -101,14 +103,13 @@ public class BookTrip extends JFrame {
         try {
             Connection connection = DriverManager.getConnection(url);
             int generateID = getNextBookingID();
-            System.out.println(generateID);
             String sql = "insert into  BOOKING (USERID,TRIPID,BOOKINGID) values(?,?,?)";
             PreparedStatement statment = connection.prepareStatement(sql);
             statment.setInt(1,this.userID);
             statment.setInt(2,TripID);
             statment.setInt(3,generateID);
             statment.executeUpdate();
-            JOptionPane.showMessageDialog(this,"Successfully Booked");
+            Seats seat = new Seats(TripID,generateID);
             this.dispose();
             connection.close();
         } catch (SQLException e) {

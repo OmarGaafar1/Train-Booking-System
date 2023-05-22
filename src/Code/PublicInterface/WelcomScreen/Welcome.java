@@ -13,6 +13,7 @@ public class Welcome extends  JFrame {
     private JButton registerButton;
     private JButton signInAsAnButton;
     private JButton signInAsAButton;
+    private JButton exitButton;
     private JButton signInAsUserButton;
     public Welcome(){
         setTitle("Welcome");
@@ -42,6 +43,12 @@ public class Welcome extends  JFrame {
             public void actionPerformed(ActionEvent e) {
                 Welcome.this.dispose();
                 Login l = new Login(null,"ADMIN");
+            }
+        });
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Welcome.this.dispose();
             }
         });
     }

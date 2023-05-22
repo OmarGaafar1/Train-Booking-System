@@ -207,20 +207,25 @@ public class LoggedInUser extends JFrame {
             Connection connection = DriverManager.getConnection(url);
             StringBuilder tripsText = new StringBuilder();
             tripsText.append("TripID").append("\t")
-                    .append("TrainID").append("\t")
+                    .append("TrainID").append("\t").append("avaliableSeats").append('\t')
                     .append("Date").append("\t")
                     .append("Source").append("\t")
                     .append("Destination").append("\t")
                     .append("arrivalTime").append("\t\t")
                     .append("departureTime").append("\n");
 
-            String sql = "select * from Trip";
+            String sql = "SELECT T.TRIPID, T.TRAINID, T.DATE, T.SOURCE, T.DESTINATION, T.ARRIVALTIME, T.DEPARTURETIME, COUNT(Seats.SEATID) AS AVAILABLE_SEATS\n" +
+                    "FROM TRIP T\n" +
+                    "LEFT JOIN SEATS ON T.TRAINID = Seats.TRAINID\n" +
+                    "WHERE Seats.BookingID IS NULL\n" +
+                    "GROUP BY T.TRIPID, T.TRAINID, T.DATE, T.SOURCE, T.DESTINATION, T.ARRIVALTIME, T.DEPARTURETIME;\n";
             PreparedStatement statment = connection.prepareStatement(sql);
             ResultSet resultSet = statment.executeQuery();
             while(resultSet.next())
             {
                 String TripID = resultSet.getString("TRIPID");
                 String TrainID = resultSet.getString("TRAINID");
+                String availabeSeats = resultSet.getString("AVAILABLE_SEATS");
                 String Date = resultSet.getString("Date");
                 String Source = resultSet.getString("Source");
                 String Destination = resultSet.getString("Destination");
@@ -228,6 +233,7 @@ public class LoggedInUser extends JFrame {
                 String departureTime = resultSet.getString("departureTime");
                 tripsText.append(TripID).append("\t")
                         .append(TrainID).append("\t")
+                        .append(availabeSeats).append('\t')
                         .append(Date).append("\t")
                         .append(Source).append("\t")
                         .append(Destination).append("\t")

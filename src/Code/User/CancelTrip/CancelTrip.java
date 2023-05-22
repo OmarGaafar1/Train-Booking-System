@@ -102,9 +102,16 @@ public class CancelTrip extends JFrame {
         try {
             Connection connection = DriverManager.getConnection(url);
             String sql = "Delete from BOOKING where BOOKINGID = ? ";
+            String sql2 = "update Seats " +
+                    "set BOOKINGID = null\n" +
+                    "where BOOKINGID=?";
             PreparedStatement statment = connection.prepareStatement(sql);
+            PreparedStatement statment2 = connection.prepareStatement(sql2);
             statment.setInt(1,bookingID);
+            statment2.setInt(1,bookingID);
+            statment2.executeUpdate();
             statment.executeUpdate();
+
             JOptionPane.showMessageDialog(this,"Trip was successfully canceled");
             this.dispose();
             connection.close();
