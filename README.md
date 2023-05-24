@@ -24,18 +24,8 @@ Train System is a Java-based application that allows users to book train trips, 
 - **JDBC:** Java Database Connectivity API for connecting and interacting with the SQL Server database.
 
 ## ScreenShoots
-![Home Screen](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/aa77672d-cb06-40f1-8bcc-08830dd41aa9)
-![User-Admin-SignIn](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/9a837fa5-e41b-4f95-93b4-604452443053)
-![Register Form](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/6b74a643-5971-47e4-a72a-1bf6cb198007)
+![Home Screen](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/ddb623d4-32d2-4350-ac13-db62ae6ffde9)
 
-![LoggedIn-User](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/ac22bdea-9286-48b6-97b4-c107ba6d06d7)
-
-![LoggedIn-Admin](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/4e57cdfd-e4ff-4e93-9450-2566b8877771)
-![Add Trip (Admin)](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/e85682bc-230a-4506-9f0f-73bc1d6c941e)
-![Add Train (Admin)](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/99324e16-5971-4d02-bebd-25e928b5e4c8)
-![BookTrip (User) 1](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/594c8a45-b68a-4d65-ab1e-b8d56c5cb5ee)
-![BookTrip (User) 2](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/0527714d-2e80-4f6b-8efc-7bbe88df90c5)
-![Delete Trip and Delete Train (Admin)](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/3d579cb8-f9f5-4424-b744-dd600db71be1)
 
 
 
