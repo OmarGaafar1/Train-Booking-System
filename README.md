@@ -25,6 +25,10 @@ Train System is a Java-based application that allows users to book train trips, 
 
 ## ScreenShoots
 ![Home Screen](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/ddb623d4-32d2-4350-ac13-db62ae6ffde9)
+![User-Admin-SignIn](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/3d6e6e0a-116b-4df7-8bfe-152c2db62e23)
+![Register Form](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/2214838f-c685-45bd-877c-68c1e27d5b2c)
+![LoggedIn-User](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/e4ff990c-92d0-48a4-9d9f-c605a9405aa0)
+![LoggedIn-Admin](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/efff5dcb-043b-420c-9b17-a4888e8f661a)
 
 
 
