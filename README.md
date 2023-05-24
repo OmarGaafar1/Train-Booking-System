@@ -14,6 +14,7 @@ Train System is a Java-based application that allows users to book train trips, 
 - **Admin Panel:** Admin users have additional functionalities for managing trains and trips.
   - **Train Management:** Admin users can add new trains, delete trains, and view the list of all trains.
   - **Trip Management:** Admin users can add new trips, delete trips, and view the list of all trips.
+  - **Application Management:** Admin can generate reports showing all the information about all the user
 
 ## Technologies Used
 
@@ -23,13 +24,18 @@ Train System is a Java-based application that allows users to book train trips, 
 - **JDBC:** Java Database Connectivity API for connecting and interacting with the SQL Server database.
 
 ## ScreenShoots
-![1](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/43abe8d8-8109-458c-92fd-344b0d6809ac)
-![2](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/f9f5ec0a-9f98-4d2f-b8c8-fa95a60f7424)\
-![3](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/ce2d53c7-4c9e-4ae3-8eb2-565e02e8bf58)
-![6](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/a64491d6-f873-4df1-8b04-c2b491e99708)
-![5](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/847cfc01-d982-4029-a29c-2805360937fb)
-![7](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/d7db59eb-c494-473f-a15e-390b10c71fd6)
+![Home Screen](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/aa77672d-cb06-40f1-8bcc-08830dd41aa9)
+![User-Admin-SignIn](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/9a837fa5-e41b-4f95-93b4-604452443053)
+![Register Form](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/6b74a643-5971-47e4-a72a-1bf6cb198007)
 
+![LoggedIn-User](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/ac22bdea-9286-48b6-97b4-c107ba6d06d7)
+
+![LoggedIn-Admin](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/4e57cdfd-e4ff-4e93-9450-2566b8877771)
+![Add Trip (Admin)](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/e85682bc-230a-4506-9f0f-73bc1d6c941e)
+![Add Train (Admin)](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/99324e16-5971-4d02-bebd-25e928b5e4c8)
+![BookTrip (User) 1](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/594c8a45-b68a-4d65-ab1e-b8d56c5cb5ee)
+![BookTrip (User) 2](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/0527714d-2e80-4f6b-8efc-7bbe88df90c5)
+![Delete Trip and Delete Train (Admin)](https://github.com/OmarGaafar1/Train-Booking-System/assets/92587188/3d579cb8-f9f5-4424-b744-dd600db71be1)
 
 
 
